@@ -9,6 +9,8 @@ import { SocketInstance } from './socket.instance';
 import type { IClientConfig, IConnectConfig, IMessage, IRoute } from './socket.types';
 
 export class SocketClient {
+    private static instance: SocketClient;
+
     private ws?: WebSocket;
 
     public controllerAdapter: ControllerAdapter = new ControllerAdapter();
@@ -19,6 +21,14 @@ export class SocketClient {
         controllers
     }: IClientConfig) {
         this.controllers = controllers.map(Controller => new Controller());
+    }
+
+    public static configure (config: IClientConfig): SocketClient {
+        if (!SocketClient.instance) {
+            SocketClient.instance = new SocketClient(config);
+        }
+
+        return SocketClient.instance;
     }
 
     private mapMiddlewares (type: MiddlewareType) {

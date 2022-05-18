@@ -84,7 +84,7 @@ class AppController {
     }
 }
 
-const client = new SocketClient({
+const client = SocketClient.configure({
     controllers: [AppController]
 });
 

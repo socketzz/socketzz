@@ -3,7 +3,7 @@ import { SocketClient } from '../../packages/client/src';
 import { SimpleController } from './simple.controller';
 import { GreetingController } from './greeting.controller';
 
-const client = new SocketClient({
+const client = SocketClient.configure({
     controllers: [
         SimpleController,
         GreetingController
