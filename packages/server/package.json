@@ -1,0 +1,33 @@
+{
+  "name": "@socketzz/server",
+  "version": "0.0.0",
+  "description": "Socketzz server",
+  "homepage": "https://github.com/socketzz/socketzz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/socketzz/socketzz"
+  },
+  "author": "tori-getz",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc --pretty",
+    "prepare": "npm run build"
+  },
+  "typings": "lib/index.d.ts",
+  "dependencies": {
+    "isomorphic-ws": "^4.0.1",
+    "ws": "^8.6.0"
+  },
+  "gitHead": "b1dd67a30d47041993621929adca3e39830dd0cf",
+  "publishConfig": {
+    "access": "public"
+  }
+}
